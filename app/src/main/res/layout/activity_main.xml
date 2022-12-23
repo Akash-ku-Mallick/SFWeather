@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/addLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00000000"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="setLocationWindow"
+        android:src="@drawable/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!---graph to be added later-->
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="233dp"
+        android:layout_height="282dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="214dp"
+            android:layout_height="73dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="9dp"
+            android:fontFamily="monospace"
+            android:gravity="center_horizontal"
+            android:text="@string/location"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="60dp"
+            android:layout_height="69dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="90dp"
+            android:maxWidth="96dp"
+            android:maxHeight="96dp"
+            android:src="@drawable/weather" />
+
+        <TextView
+            android:layout_width="118dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weatherIcon"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="88dp"
+            android:text="Weather" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layoutDescription="@xml/activity_main_scene"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl">
+
+        <RelativeLayout
+            android:id="@+id/Forcaste"
+            android:layout_width="416dp"
+            android:layout_height="519dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="1dp">
+
+            <TextView
+                android:id="@+id/today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:text="weather" />
+
+            <TextView
+                android:id="@+id/tomorrow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/today"
+                android:text="tomorrow"
+                tools:layout_editor_absoluteX="-138dp"
+                tools:layout_editor_absoluteY="507dp" />
+
+            <TextView
+                android:id="@+id/nextday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-411dp"
+                android:layout_marginTop="49dp"
+                android:layout_toEndOf="@id/nextday"
+                android:text="one day later" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

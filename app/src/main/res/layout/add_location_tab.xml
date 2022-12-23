@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addLocWin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dark_grad">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/action_settings"
+        android:clickable="true"
+        android:background="#00000000"
+        android:onClick="home" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            tools:ignore="UselessParent"
+            android:id="@+id/textSection">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:foregroundGravity="left"
+                android:src="@drawable/ic_baseline_add_location_24"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="288dp"
+                tools:ignore="ContentDescription"
+                android:visibility="invisible"/>
+
+            <EditText
+                android:id="@+id/Location"
+                android:layout_width="187dp"
+                android:layout_height="match_parent"
+                android:autofillHints="Current Location"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:hint="@string/location"
+                android:inputType="textNoSuggestions"
+                android:textColor="@drawable/dark_grad"
+                tools:layout_editor_absoluteX="112dp"
+                tools:layout_editor_absoluteY="290dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foregroundGravity="right"
+                android:src="@drawable/ic_baseline_search_24"
+                tools:layout_editor_absoluteX="251dp"
+                tools:layout_editor_absoluteY="210dp"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#00000000"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:onClick="permissionCheck"
+            android:text="@string/current_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textSection"/>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
